@@ -40,3 +40,7 @@ contract PersonDataStoragV1 {
         age = addValues(age, 1);
     }
 }
+
+    // function incrementAge()external {
+    //     age = age + 1;
+    // }
