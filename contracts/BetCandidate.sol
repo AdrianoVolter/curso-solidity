@@ -26,6 +26,7 @@ contract BetCandidate{
 
     address owner;
     uint fee = 1000;
+    uint public netPrize;
 
     constructor(){
         owner = msg.sender;
@@ -67,6 +68,20 @@ contract BetCandidate{
         dispute.winner = winner;
 
         uint grossPrize = dispute.total1 + dispute.total2;
-        uint comission = (grossPrize * fee) / 1e4;
+        uint commission = (grossPrize * fee) / 1e4;
+        netPrize = grossPrize - commission;
+
+        payable (owner).transfer(commission);
+    }
+
+    function claim() external {
+        Bet memory userBet = allBets[msg.sender];
+        require(dispute.winner > 0 && dispute.winner == userBet.candidate && userBet.claimed == 0, "Invalid claim");
+
+        uint winnerAmount = dispute.winner == 1 ? dispute.total1 : dispute.total2;
+        uint ratio = (userBet.amount * 1e4) / winnerAmount;
+        uint individualPrize = netPrize * ratio / 1e4;
+        allBets[msg.sender].claimed = individualPrize;
+        payable(msg.sender).transfer(individualPrize);
     }
 }

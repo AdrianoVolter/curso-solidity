@@ -59,6 +59,13 @@
 			},
 			{
 				"inputs": [],
+				"name": "claim",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "dispute",
 				"outputs": [
 					{
@@ -99,6 +106,32 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "winner",
+						"type": "uint256"
+					}
+				],
+				"name": "finish",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "netPrize",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -129,11 +162,11 @@
 	},
 	"sources": {
 		"contracts/BetCandidate.sol": {
-			"keccak256": "0xeea6deeb52cdee9624336c81d7c68f600a01c8d0b9b5f916d078d4f1b8579239",
+			"keccak256": "0x4df9952e480bec23538cb1b875c732bcadfeb980f1e54e56ac373ead1a117503",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d2a9d90cdbcec49e4ada85866ca4b3a875869c7d2bc84b083ab5ca229e3697ab",
-				"dweb:/ipfs/QmS7poTJ96NLxBXKB3xGCs6xH8bNbtAcT1AS35geZZBMiw"
+				"bzz-raw://a535613d54d75b93994d09f2c2aacac161a1c9a0ae38c88defeff4c00d6c7cc4",
+				"dweb:/ipfs/QmWCPNCLZQYjZuK32ceD2uz9oE1cSwxSRYkfgK6DZhdQ1k"
 			]
 		}
 	},
